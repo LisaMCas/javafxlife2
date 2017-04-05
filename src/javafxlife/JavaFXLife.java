@@ -66,8 +66,9 @@ public class JavaFXLife extends Application {
         final Menu speedMenu = new Menu("Speed");
         final Menu optionsMenu = new Menu("Options");
         final Menu helpMenu = new Menu("Help");
+        final Menu colors = new Menu("Colors");
 
-        myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, helpMenu);
+        myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, helpMenu, colors);
 
         /**
          * *********************************************************************
@@ -166,7 +167,27 @@ public class JavaFXLife extends Application {
         color.setAccelerator(KeyCombination.keyCombination("Ctrl+C"));
         color.setOnAction(e -> lifePane.setShowColors(color.isSelected()));
         optionsMenu.getItems().add(color);
-
+        /**
+         * ******************************************************************
+         * Color Menu Section
+         */
+        MenuItem blue = new MenuItem("Blue");
+        blue.setOnAction(e -> lifePane.setCellColor("blue"));
+        
+        MenuItem purple = new MenuItem("Purple");
+        purple.setOnAtion(e -> lifePane.setCellColor("purple"));
+        
+        MenuItem orange = new MenuOtem("Orange");
+        orange.setOnAction(e -> lifePane.setCellColor("orange"));
+        
+        MenuItem red = new MenuItem("Red");
+        red.setOnAction(e -> lifePane.setCellColor("red"));
+        
+        MenuItem green = new MenuItem("Green");
+        green.setAction(e -> lifePane.setCellColor("green"));
+        
+        colors.getItems().addAll(blue, purple, orange, red, green);
+        
         /**
          * *********************************************************************
          * Help Menu Section
@@ -179,7 +200,16 @@ public class JavaFXLife extends Application {
             readFile(new File("jp.txt"));
             lifePane.drawCells();
         });
-        helpMenu.getItems().add(jp);        
+        helpMenu.getItems().add(jp);    
+        
+        MenuItem lmc = new MenuItem("LMC");
+        lmc.setOnAction(e -> {
+            lifePane.pause();
+            lifePane.clearCells();
+            readFile (new File ("lmc.txt"));
+            lifePane.drawCells();
+        });
+        helpMenu.getItems().add(lmc);
         
         MenuItem acorn = new MenuItem("Acorn");
         acorn.setOnAction(e -> {

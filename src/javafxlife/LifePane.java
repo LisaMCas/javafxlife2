@@ -44,6 +44,12 @@ public class LifePane extends ScrollPane {
     private final Canvas canvas;
     private final Timeline animation;
     private final Random gen = new Random();
+    
+    private boolean colorBlue = false;
+    private boolean colorPurple = false;
+    private boolean colorOrange = false;
+    private boolean colorRed = false;
+    private boolean colorGreen = false;
 
     public LifePane(Label lbStatus) {
         this.lbStatus = lbStatus;
@@ -164,13 +170,23 @@ public class LifePane extends ScrollPane {
             for (int y = 0; y < yCellCount; y++) {
                 if (cells[x][y] == 0) {
                     g.setFill(Color.WHITE);
-                } else {
-                    if (showColors) {
+                } else if (showColors) {
                         int myBlue = gen.nextInt(255);
                         int myGreen = gen.nextInt(255);
                         int myRed = gen.nextInt(255);
                         Color myColor = Color.rgb(myRed, myGreen, myBlue);
                         g.setFill(myColor);
+                           
+                    } else if (colorBlue){
+                        g.setFill(Color.BLUE);
+                    } else if (colorPurple){
+                        g.setFill (Color.PURPLE);
+                    } else if (colorOrange){
+                        g.setFill (Color.ORANGE);
+                    } else if (colorRed);
+                        g.setFill (Color.RED);
+                    } else if (colorGreen){
+                        g.setFill (Color.GREEN);
                     } else {
                         g.setFill(Color.BLACK);
                     }
