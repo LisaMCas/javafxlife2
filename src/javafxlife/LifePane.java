@@ -26,7 +26,7 @@ import javafx.util.Duration;
  * ScrollPane. Let me know if you figure it out... Solved: Dr. Lienhard came up
  * with a solution for getting the ScrollPane working :-)
  *
- * @author John Phillips
+ * @author Lisa Caswell forked from Joohn Phillips
  */
 public class LifePane extends ScrollPane {
 
