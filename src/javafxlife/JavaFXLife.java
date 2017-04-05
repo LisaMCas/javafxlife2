@@ -175,18 +175,21 @@ public class JavaFXLife extends Application {
         blue.setOnAction(e -> lifePane.setCellColor("blue"));
         
         MenuItem purple = new MenuItem("Purple");
-        purple.setOnAtion(e -> lifePane.setCellColor("purple"));
+        purple.setOnAction(e -> lifePane.setCellColor("purple"));
         
-        MenuItem orange = new MenuOtem("Orange");
+        MenuItem orange = new MenuItem("Orange");
         orange.setOnAction(e -> lifePane.setCellColor("orange"));
         
         MenuItem red = new MenuItem("Red");
         red.setOnAction(e -> lifePane.setCellColor("red"));
         
         MenuItem green = new MenuItem("Green");
-        green.setAction(e -> lifePane.setCellColor("green"));
+        green.setOnAction(e -> lifePane.setCellColor("green"));
         
-        colors.getItems().addAll(blue, purple, orange, red, green);
+        MenuItem black = new MenuItem("Black");
+        black.setOnAction(e -> lifePane.setCellColor("black"));
+                
+        colors.getItems().addAll(blue, purple, orange, red, green, black);
         
         /**
          * *********************************************************************

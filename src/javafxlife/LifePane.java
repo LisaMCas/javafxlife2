@@ -50,6 +50,7 @@ public class LifePane extends ScrollPane {
     private boolean colorOrange = false;
     private boolean colorRed = false;
     private boolean colorGreen = false;
+    private boolean colorBlack = false;
 
     public LifePane(Label lbStatus) {
         this.lbStatus = lbStatus;
@@ -163,6 +164,7 @@ public class LifePane extends ScrollPane {
     }
 
     public void drawCells() {
+        
         GraphicsContext g = canvas.getGraphicsContext2D();
         g.clearRect(0, 0, xCellCount * CELLWIDTH, yCellCount * CELLHEIGHT);
         g.setFill(Color.gray(0, 0.2));
@@ -175,29 +177,73 @@ public class LifePane extends ScrollPane {
                         int myGreen = gen.nextInt(255);
                         int myRed = gen.nextInt(255);
                         Color myColor = Color.rgb(myRed, myGreen, myBlue);
-                        g.setFill(myColor);
-                           
-                    } else if (colorBlue){
-                        g.setFill(Color.BLUE);
-                    } else if (colorPurple){
-                        g.setFill (Color.PURPLE);
-                    } else if (colorOrange){
-                        g.setFill (Color.ORANGE);
-                    } else if (colorRed);
-                        g.setFill (Color.RED);
-                    } else if (colorGreen){
-                        g.setFill (Color.GREEN);
-                    } else {
-                        g.setFill(Color.BLACK);
-                    }
+                        g.setFill(myColor);                   
+                } else if (colorBlue){
+                    g.setFill(Color.BLUE);
+                } else if (colorPurple){
+                    g.setFill (Color.PURPLE);
+                } else if (colorOrange){
+                    g.setFill (Color.ORANGE);
+                } else if (colorRed){
+                    g.setFill (Color.RED);
+                } else if (colorGreen){
+                    g.setFill (Color.GREEN);
+                } else {
+                    g.setFill(Color.BLACK);
                 }
                 g.fillRect(x * CELLWIDTH, y * CELLHEIGHT, CELLFILLWIDTH, CELLFILLHEIGHT);
             }
-        }
+    }
+
         iteration++;
         lbStatus.setText("Iterations=" + iteration + ", rate="
                 + animation.getRate() + ", xcount=" + xCellCount
                 + ", ycount=" + yCellCount);
+    }
+    public void setCellColor(String color){
+        if (color.equalsIgnoreCase("blue")){
+            colorBlue = true;
+            colorPurple = false;
+            colorOrange = false;
+            colorRed = false;
+            colorGreen = false;
+            colorBlack = false;
+        } else if (color.equalsIgnoreCase("purple")){
+            colorBlue = false;
+            colorPurple = true;
+            colorOrange = false;
+            colorRed = false;
+            colorGreen = false;
+            colorBlack = false;
+        } else if (color.equalsIgnoreCase("orange")){
+            colorBlue = false;
+            colorPurple = false;
+            colorOrange = true;
+            colorRed = false;
+            colorGreen = false;
+            colorBlack = false;
+        } else if (color.equalsIgnoreCase("red")){
+            colorBlue = false;
+            colorPurple = false;
+            colorOrange = false;
+            colorRed = true;
+            colorGreen = false;
+            colorBlack = false;
+        } else if (color.equalsIgnoreCase("green")){
+            colorBlue = false;
+            colorPurple = false;
+            colorOrange = false;
+            colorRed = false;
+            colorGreen = true;
+            colorBlack = false; 
+        } else if (color.equalsIgnoreCase("black")){
+            colorBlue = false;
+            colorPurple = false;
+            colorOrange = false;
+            colorRed = false;
+            colorGreen = false;
+            colorBlack = true;
+        }       
     }
 
     // This method implements the rules of the game of life by checking each neighbor cell to see if:
