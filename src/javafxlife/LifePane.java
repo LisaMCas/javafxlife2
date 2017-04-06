@@ -45,12 +45,12 @@ public class LifePane extends ScrollPane {
     private final Timeline animation;
     private final Random gen = new Random();
     
-    private boolean colorBlue = false;
-    private boolean colorPurple = false;
-    private boolean colorOrange = false;
-    private boolean colorRed = false;
-    private boolean colorGreen = false;
-    private boolean colorBlack = false;
+    private boolean colBlue = false;
+    private boolean colPurple = false;
+    private boolean colOrange = false;
+    private boolean corRed = false;
+    private boolean colGreen = false;
+    private boolean colBlack = false;
 
     public LifePane(Label lbStatus) {
         this.lbStatus = lbStatus;
@@ -178,15 +178,15 @@ public class LifePane extends ScrollPane {
                         int myRed = gen.nextInt(255);
                         Color myColor = Color.rgb(myRed, myGreen, myBlue);
                         g.setFill(myColor);                   
-                } else if (colorBlue){
+                } else if (colBlue){
                     g.setFill(Color.BLUE);
-                } else if (colorPurple){
+                } else if (colPurple){
                     g.setFill (Color.PURPLE);
-                } else if (colorOrange){
+                } else if (colOrange){
                     g.setFill (Color.ORANGE);
-                } else if (colorRed){
+                } else if (colRed){
                     g.setFill (Color.RED);
-                } else if (colorGreen){
+                } else if (colGreen){
                     g.setFill (Color.GREEN);
                 } else {
                     g.setFill(Color.BLACK);
@@ -202,47 +202,47 @@ public class LifePane extends ScrollPane {
     }
     public void setCellColor(String color){
         if (color.equalsIgnoreCase("blue")){
-            colorBlue = true;
-            colorPurple = false;
-            colorOrange = false;
-            colorRed = false;
-            colorGreen = false;
-            colorBlack = false;
+            colBlue = true;
+            colPurple = false;
+            colOrange = false;
+            colRed = false;
+            colGreen = false;
+            colBlack = false;
         } else if (color.equalsIgnoreCase("purple")){
-            colorBlue = false;
-            colorPurple = true;
-            colorOrange = false;
-            colorRed = false;
-            colorGreen = false;
-            colorBlack = false;
+            colBlue = false;
+            colPurple = true;
+            colOrange = false;
+            colRed = false;
+            colGreen = false;
+            colBlack = false;
         } else if (color.equalsIgnoreCase("orange")){
-            colorBlue = false;
-            colorPurple = false;
-            colorOrange = true;
-            colorRed = false;
-            colorGreen = false;
-            colorBlack = false;
+            colBlue = false;
+            colPurple = false;
+            colOrange = true;
+            colRed = false;
+            colGreen = false;
+            colBlack = false;
         } else if (color.equalsIgnoreCase("red")){
-            colorBlue = false;
-            colorPurple = false;
-            colorOrange = false;
-            colorRed = true;
-            colorGreen = false;
-            colorBlack = false;
+            colBlue = false;
+            colPurple = false;
+            colOrange = false;
+            colRed = true;
+            colGreen = false;
+            colBlack = false;
         } else if (color.equalsIgnoreCase("green")){
-            colorBlue = false;
-            colorPurple = false;
-            colorOrange = false;
-            colorRed = false;
-            colorGreen = true;
-            colorBlack = false; 
+            colBlue = false;
+            colPurple = false;
+            colOrange = false;
+            colRed = false;
+            colGreen = true;
+            colBlack = false; 
         } else if (color.equalsIgnoreCase("black")){
-            colorBlue = false;
-            colorPurple = false;
-            colorOrange = false;
-            colorRed = false;
-            colorGreen = false;
-            colorBlack = true;
+            colBlue = false;
+            colPurple = false;
+            colOrange = false;
+            colRed = false;
+            colGreen = false;
+            colBlack = true;
         }       
     }
 
